@@ -1,0 +1,21 @@
+<!-- select -->
+<app-select
+  [dataArray]="categories"
+  [title]="name"
+  (filtered)="valueFilter($event)"
+></app-select>
+
+<!-- item -->
+<div class="row mt-5" *ngIf="!loading">
+  <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3" *ngFor="let item of data" >
+    <app-product [x]="item" (selected)="addElement($event)" ></app-product>
+  </div>
+</div>
+
+<!-- spinner -->
+<div
+  class="spinner d-flex justify-content-center align-items-center"
+  *ngIf="loading"
+>
+  <app-spinner></app-spinner>
+</div>

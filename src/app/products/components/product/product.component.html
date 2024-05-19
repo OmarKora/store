@@ -1,0 +1,28 @@
+<div class="item border rounded-2 p-1 h-100">
+<div class="" routerLink="/details/{{x.id}}">
+    <div class="img">
+      <img [src]="x.image" alt="" class="w-100" />
+    </div>
+    <div class="title p-2">
+      <h4 class="mb-2">{{ x.category }}</h4>
+    </div>
+    <div class="text p-2">
+      <p>{{ x.description }}</p>
+    </div>
+</div>
+  <div class="footer p-1 d-flex justify-content-between align-items-center">
+    <button
+      class="btn btn-primary"
+      *ngIf="!addButton"
+      (click)="addButton = true"
+    >
+      Add To Card
+    </button>
+    <div class="d-flex w-50" *ngIf="addButton">
+      <input type="number" class="form-control" [(ngModel)]="quantity" />
+
+      <button class="btn btn-danger" (click)="Add()">Add</button>
+    </div>
+    <p class="price mb-0 bg-danger rounded-5 p-2">{{ x.price }} E.G.P</p>
+  </div>
+</div>

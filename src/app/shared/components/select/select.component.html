@@ -1,0 +1,14 @@
+<div class="w-25">
+    <label for="optin">{{title}}: </label>
+    <select
+      name=""
+      id="option"
+      (change)="valueFilter($event)"
+      class="form-select"
+    >
+      <option value="all">All</option>
+      <option [value]="option" *ngFor="let option of dataArray">
+        {{ option }}
+      </option>
+    </select>
+  </div>
